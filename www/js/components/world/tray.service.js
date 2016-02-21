@@ -24,13 +24,13 @@
                     name: 'tyrannosaure',
                     color: 'blue',
                     infos: {
-                        type: 'carnivor',
+                        type: 'carnivore',
                         height: '7',
                         about: 'Il vie en amerique du nord'
                     }
                 }
             ],
-            active: null,
+            actives: [],
             update: update,
             openModal: openModal
         };
@@ -44,8 +44,13 @@
          * @param {Object} event
          */
         function update(event, $scope) {
-            tray.active = _.find(tray.dynosaure, {color: event.color});
-            $scope.active = tray.active;
+            var dyno = _.find(tray.dynosaure, {color: event.color});
+            dyno.pos = {x: event.posX, y: event.posY};
+
+            tray.actives.push(dyno);
+            $scope.actives = tray.actives;
+            $scope.active = dyno;
+
             tray.openModal($scope);
 
             // Ferme la popup après 10s de lecture

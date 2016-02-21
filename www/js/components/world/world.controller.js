@@ -5,15 +5,15 @@
         .module('starter')
         .controller('WorldCtrl', WorldCtrl);
 
-    WorldCtrl.$inject = ['$scope', '$rootScope', '$stateParams', 'worldsServices', 'trayServices'];
+    WorldCtrl.$inject = ['$scope', '$rootScope', '$stateParams', '$timeout', 'worldsServices', 'trayServices'];
 
-    function WorldCtrl($scope, $rootScope, $stateParams, worldsServices, tray) {
+    function WorldCtrl($scope, $rootScope, $stateParams, $timeout, worldsServices, tray) {
         $scope.service             = worldsServices;
         $scope.service.active      = _.find(worldsServices.worlds, {slug: $stateParams.worldName});
         $scope.openModal           = openModal;
         $rootScope.isSocketStarted = false;
         ionic.Platform.fullScreen(true);
-        $scope.active = tray.active;
+        $scope.actives = tray.actives;
 
         $rootScope.$on('colorReceive', function(e, data) {
             //$scope.service.phrase = 'Un dynosaure s\'est posé et il est ' + data.color;
@@ -31,7 +31,8 @@
         });
 
         // /!\ A supprimer
-        $rootScope.$emit('colorReceive', {posX : 2, posY: 2, color: 'magenta'});
+        //$rootScope.$emit('colorReceive', {posX : 70, posY: 30, color: 'magenta'});
+        //$timeout(function() {$rootScope.$emit('colorReceive', {posX : 10, posY: 30, color: 'blue'}) }, 5000);
 
         /**
          * Oouvre la modal d'information

@@ -1,41 +1,45 @@
 <ion-view view-title="Worlds" hide-nav-bar="true">
     <ion-content>
         <div class="world">
-            <img src="/img/dinosaures/diplodocus.png" class="one-dyno" ng-show="active.name=='diplodocus'"/>
 
-            <script type="text/ng-template" id="information-modal">
-                <div class="panel">
-                    <div class="title">{{active.name}}</div>
-                    <div class="infos">
-                        <ul>
-                            <li>
-                                <div class="info-title">Nourriture</div>
-                                <div class="info-content">
-                                    <img ng-if="active.infos.type" src="/img/icon-{{active.infos.type}}.png" />
-                                </div>
-                            </li>
+            <div ng-repeat="active in actives">
+                <img src="/img/dinosaures/{{active.name}}.png" class="one-dyno" style="top:{{active.pos.x}}%; left: {{active.pos.y}}%"/>
 
-                            <li>
-                                <div class="info-title">Taille</div>
-                                <div class="info-content">
-                                    <img src="/img/icon-taille.png" />
-                                    <span class="info-content-height">
-                                        <span>{{active.infos.height}}</span>
-                                        <span class="unit">m</span>
-                                    </span>
-                                </div>
-                            </li>
+                <script type="text/ng-template" id="information-modal">
+                    <div class="panel">
+                        <div class="title">{{active.name}}</div>
+                        <div class="infos">
+                            <ul>
+                                <li>
+                                    <div class="info-title">Nourriture</div>
+                                    <div class="info-content">
+                                        <img ng-if="active.infos.type" src="/img/icon-{{active.infos.type}}.png" />
+                                    </div>
+                                </li>
 
-                            <li class="info-annecdote">
-                                <div class="info-title">Anecdote</div>
-                                <div class="info-content">
-                                    <span class="info-content-annecdote">{{active.infos.about}}</span>
-                                </div>
-                            </li>
-                        </ul>
+                                <li>
+                                    <div class="info-title">Taille</div>
+                                    <div class="info-content">
+                                        <img src="/img/icon-taille.png" />
+                                        <span class="info-content-height">
+                                            <span>{{active.infos.height}}</span>
+                                            <span class="unit">m</span>
+                                        </span>
+                                    </div>
+                                </li>
+
+                                <li class="info-annecdote">
+                                    <div class="info-title">Anecdote</div>
+                                    <div class="info-content">
+                                        <span class="info-content-annecdote">{{active.infos.about}}</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-            </script>
+                </script>
+            </div>
         </div>
+
     </ion-content>
 </ion-view>
