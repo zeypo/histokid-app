@@ -1,0 +1,11 @@
+@font-face {
+    font-family: 'bariolregular';
+    src: url('../fonts/bariol-webfont.eot');
+    src: url('../fonts/bariol-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../fonts/bariol-webfont.woff2') format('woff2'),
+         url('../fonts/bariol-webfont.woff') format('woff'),
+         url('../fonts/bariol-webfont.ttf') format('truetype'),
+         url('../fonts/bariol-webfont.svg#bariolregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}

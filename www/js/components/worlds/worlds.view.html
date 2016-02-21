@@ -1,0 +1,11 @@
+<ion-view view-title="Worlds">
+  <ion-content>
+    <h1>Worlds</h1>
+
+    <ion-list>
+        <ion-item ng-repeat="world in service.worlds" href="#/app/worlds/{{world.slug}}">
+            {{world.name}}
+        </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

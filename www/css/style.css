@@ -1,0 +1,80 @@
+.scroll {
+    height: 100%;
+}
+
+.world {
+    background: url('../img/bg.png') no-repeat center center;
+    background-size: cover;
+    position: relative;
+    height: 100%;
+}
+
+.one-dyno {
+    position: absolute;
+    top: 100px;
+    left: 100px;
+}
+
+.panel {
+    font-family: 'bariolregular';
+    color: #244c8e;
+}
+
+.panel .title {
+    font-size: 21px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #d8d8d8;
+    font-weight: bold;
+}
+
+.panel .infos li {
+    display: inline-block;
+    width: 28.33%;
+    margin-left:2.5%;
+    border-right: 2px solid #d8d8d8;
+}
+
+.panel .infos li:last-child {
+    border-width: 0;
+}
+
+.panel .infos img {
+    height: 70px;
+}
+
+.panel .info-title {
+    font-size: 15px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.panel .info-content-height {
+    font-size: 52px;
+    position: relative;
+    top: -16px;
+    margin-left: 10px;
+}
+
+.panel .info-content-height .unit {
+    font-size: 14px;
+    position: relative;
+    left: -10px;
+    top:-1px;
+}
+
+.info-annecdote {
+    position: relative;
+    top: -7px;
+    text-align: center;
+}
+
+.info-content-annecdote {
+    height: 76px;
+    width: 76px;
+    background: #d8d8d8;
+    border-radius: 50%;
+    display: block;
+    font-size: 12px;
+    margin: 0 auto;
+}
